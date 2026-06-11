@@ -10,17 +10,21 @@ export function Projects() {
         "A modern e-commerce solution with real-time inventory management and seamless checkout experience.",
       image:
         "https://images.unsplash.com/photo-1693159682618-074078ed271e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHdvcmtzcGFjZSUyMGRlc2t8ZW58MXx8fHwxNzY3MjM5OTI0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
+      tags: ["React", "Node.js"],
       gradient: "from-purple-500 to-pink-500",
+      url: "https://qkart-frontend-aqk1ljexs-yuvakishores-projects.vercel.app/",
+      repo: "https://github.com/Chaos3108/yuvakishorekolli-ME_QKART_FRONTEND_V2",
     },
     {
-      title: "AI-Powered Dashboard",
+      title: "LN Mindsure",
       description:
-        "Analytics dashboard with machine learning insights and predictive analytics for business intelligence.",
+        "Expert financial solutions tailored for businesses and individuals. From taxation to wealth management, we've got you covered.",
       image:
         "https://images.unsplash.com/photo-1595623654300-b27329804025?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB0ZWNobm9sb2d5JTIwY29kZXxlbnwxfHx8fDE3NjcyNzgxMzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       tags: ["TypeScript", "Python", "TensorFlow", "D3.js"],
       gradient: "from-blue-500 to-cyan-500",
+      url: "https://ln-mindsure.vercel.app/",
+      repo: "https://github.com/Chaos3108/LN-Mindsure",
     },
     {
       title: "Creative Portfolio",
@@ -95,14 +99,28 @@ export function Projects() {
 
                 {/* Links */}
                 <div className="flex gap-4">
-                  <button className="flex items-center gap-2 text-violet-600 hover:text-violet-700 transition-colors">
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Live Demo</span>
-                  </button>
-                  <button className="flex items-center gap-2 text-violet-600 hover:text-violet-700 transition-colors">
-                    <Github className="w-4 h-4" />
-                    <span>Code</span>
-                  </button>
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 text-violet-600 hover:text-violet-700 transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>Live Demo</span>
+                    </a>
+                  ) : null}
+                  {project.repo ? (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 text-violet-600 hover:text-violet-700 transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      <span>Code</span>
+                    </a>
+                  ) : null}
                 </div>
               </div>
 
