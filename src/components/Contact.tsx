@@ -11,16 +11,22 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock form submission
-    alert("Thanks for reaching out! This is a demo portfolio.");
+
+    const subject = encodeURIComponent(`Portfolio inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+
+    window.location.href =
+      `mailto:yuvakishorekolli@gmail.com?subject=${subject}&body=${body}`;
+
     setFormData({ name: "", email: "", message: "" });
   };
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
-    { icon: Twitter, label: "Twitter", href: "#" },
-    { icon: Mail, label: "Email", href: "#" },
+    { icon: Github, label: "GitHub", href: "https://github.com/Chaos3108" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/kolliyuvakishore/" },
+    { icon: Mail, label: "Email", href: "https://mail.google.com/" },
   ];
 
   return (
@@ -148,6 +154,7 @@ export function Contact() {
                   <motion.a
                     key={index}
                     href={link.href}
+                    target="_black"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-3 p-3 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all"
